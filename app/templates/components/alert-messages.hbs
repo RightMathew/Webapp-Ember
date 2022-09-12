@@ -1,0 +1,26 @@
+{{#if danger}}
+<div class="alert">
+  <span class="closebtn" {{action 'alert_Close'}}>&times;</span>  
+  <strong>{{title}}</strong>
+</div>
+
+{{else if success}}
+<div class="alert success">
+  <span class="closebtn">&times;</span>  
+  <strong>{{title}}</strong> 
+</div>
+
+{{else if info}}
+<div class="alert info">
+  <span class="closebtn">&times;</span>  
+  <strong>{{title}}</strong>
+</div>
+
+{{else if warning}}
+<div class="alert warning">
+  <span class="closebtn">&times;</span>  
+  <strong>{{title}}</strong>
+</div>
+
+{{/if}}
+{{yield}}

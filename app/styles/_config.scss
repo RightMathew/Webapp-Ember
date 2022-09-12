@@ -1,0 +1,56 @@
+$gradient_color : linear-gradient(to right, #2193b0, #6dd5ed);
+$primary-color: #272727;
+$secondary-color: #ff652f;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+
+    background-image: $gradient_color;
+    // background-color: #f7c08a;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333333;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+  
+}
+
+ul {
+
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@mixin container($max-width) {
+    margin: auto;
+    max-width: $max-width;
+    padding: 0 20px;
+    overflow: auto;
+
+}
+
+h1, h2, h3 {
+    
+    padding-bottom: 20px;
+}
+
+p {
+    
+    margin: 10px 0;
+}
+
+
+@mixin transition-ease{
+    transition: all 0.5s ease-in-out;
+}

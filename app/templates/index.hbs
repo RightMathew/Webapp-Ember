@@ -1,0 +1,39 @@
+{{component 'top-bar'}}
+<div class="root-btn">
+    <button {{action 'Login'}}>Login</button>
+
+    <button {{action 'Signup'}}>Signup</button>
+</div>
+
+
+
+<div class="question" style="white-space:pre">
+<h2>Task - 3 (Question)</h2>
+<div class="question-content">
+ABC private limited is about to start a new Company globally and you are asked to design a web app which manages the dataset efficiently.
+
+The company has several departments. Each department may have several Locations. Departments are identified by a name, D_no, Location. 
+A Manager controls a particular department. Each department is associated with many projects. 
+Employees are identified by name, id, address, dob, date_of_joining. An employee works in only one department but can work on several projects.
+We also keep track of the number of hours worked by an employee on a single project. Project can be identified by id, task, status and revenue. 
+Each employee has a dependant. Dependant has D_name, gender and relationship.
+ 
+Conditions to be met,
+    1. The above mentioned identifiers should be unique and required in order to perform a create operation.
+    2. Managers and Employees should register in the app before they proceed to Company registration. If they have already registered, proceed to the login page
+    3. Only Manager can add/modify departments and their location.
+    4. Managers should be able to view the report like number of Employees in a department, employees with most projects and Project list sorted based on revenue
+    5. Manager should be able to,
+        a. Grant/Delete access for an employee/ bulk of employees
+        b. Grant permission to add dependent to an employee
+        c. Close the project
+    6. The Employees home page should show the projects currently they are working on and dependents if any
+    7. Employees should be allowed to view their tasks and projects
+    8. When the manager deletes a department all employees needs to be transferred to the main Department, 
+        if all projects are closed else manager should not be able to delete that department
+
+Note : You need to use JAVA, POSTGRES Database and EMBER to build your web app. You can also hold on to your creativity to add more features to 
+    this wherever necessary.
+</div>
+</div>
+{{outlet}}

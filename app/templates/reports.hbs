@@ -1,0 +1,135 @@
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="homepage">ABC</a></h1>
+            <ul>
+                {{!-- <li><a {{action 'generateReport' }}>Reports</a></li>
+                <li><a id="open" {{action 'modal' }}><span class="material-symbols-outlined">person_filled</span></a>
+                </li> --}}
+                <li><a {{action 'Logout' }}>Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+{{#if logincheck}}
+
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="/">ABC</a></h1>
+        </div>
+    </nav>
+</header>
+
+<section class="workspace">
+    <div class="container">
+        <h1>LOGIN REQUIRED</h1>
+        <button {{action 'toLogin'}}>Login</button>
+    </div>
+</section>
+
+{{else}}
+
+<div class="emplist_container-projects" style="max-width: 1600px;">
+    <div class="heading">
+        <h2>Reports</h2>
+    </div>
+    <div class="emplist_head">
+        <div class="dept_select">
+            <select onclick={{action "setSelected" value="target.value" }}>
+                {{#each departments as |dept|}}
+                <option value={{dept.dept_id}}>{{dept.dept_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="reports_head">
+            <span><h3>Employee Count : <small>{{emp_cnt}}</small></h3></span>
+        </div>
+    </div>
+
+    <div class="emplist_body">
+        <div class="section1">
+            <h3>Projects</h3>
+            <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Revenue</th>
+                <th>Status</th>
+            </tr> 
+            {{#each projects as |proj index|}}
+            <tr>
+                <td>{{proj.project_name}}</td>
+                <td>{{proj.revenue}}</td>
+                <td>{{proj.status_string}}</td>
+            </tr>
+            {{/each}}
+            </table>
+
+        </div>
+        <div class="section2">
+            <h3>Employee</h3>
+            <table>
+            <tr>
+                <th>Employee</th>
+                <th>Projects Count</th>
+            </tr> 
+            {{#each employee_projects as |emp index|}}
+            <tr>
+                <td>{{emp.name}}</td>
+                <td>{{emp.cnt}}</td>
+            </tr>
+            {{/each}}
+            </table>
+
+        </div>
+    </div>
+    <div class="empty_forspace"></div>
+
+</div>
+
+
+<div class="modal-container-dialog" id='modal_container'>
+    <div class="modal-dialog">
+        <div class="modal_heading-dialog">
+            <h1 id="dialog-heading">Add Employee</h1>
+            <div class="close_div">
+                <span id="close">X</span>
+            </div>
+
+        </div>
+        <div class="modal_body-dialog">
+            <div class="modal_content-dialog">
+                {{!-- {{#if addemp}}
+                <span class="details">
+                    <h4>SELECT DEPARTMENT</h4>
+                </span>
+                <div class="content">
+                    <select onclick={{action "transfer_emp_confirm" value="target.value" }}>
+                        {{#each departments as |dept|}}
+                        <option value={{dept.dept_id}}>{{dept.dept_name}}</option>
+                        {{/each}}
+                    </select>
+                    <div class="msg">
+                        <small id="suc-id" style="color: green;">{{confirm_msg}}</small>
+                    </div>
+                </div>
+                {{else}}
+                <div class="content">
+                    <div class="msg">
+                        <small id="err-id" style="color : #e74c3c">{{confirm_msg}}</small>
+                    </div>
+                </div>
+                {{/if}} --}}
+            </div>
+        </div>
+
+        <button id="conf">
+            Confirm
+        </button>
+    </div>
+</div>
+
+
+
+{{/if}}

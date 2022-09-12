@@ -1,0 +1,267 @@
+{{#if emp}}
+
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="homepage">ABC</a></h1>
+            <ul>
+                <li><a id="open" {{action 'modal' }}><span class="material-symbols-outlined">person_filled</span></a>
+                </li>
+                <li><a {{action 'Logout' }}>Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section class="workspace">
+    <div class="container">
+        <div class="section-split">
+
+            <div class="content-area">
+                <div class="project-area">
+                    <h1>PROJECTS</h1>
+                    <ul>
+                        {{emp-project model=model forTasks='forTasks' apiTimerRecord='apiTimerRecord'}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="task-area">
+                    <h1>TASKS</h1>
+                    <ul>
+                        {{emp-tasks model=tasks}}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{{else if man}}
+
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="homepage">ABC</a></h1>
+            <ul>
+                <li><a href="homepage/reports">Reports</a></li>
+                <li><a id="open" {{action 'modal' }}><span class="material-symbols-outlined">person_filled</span></a>
+                </li>
+                <li><a {{action 'Logout' }}>Logout</a></li>
+            </ul>
+        </div>
+
+    </nav>
+</header>
+
+<section class="workspace">
+    <nav class="subbar">
+        <div class="container">
+            <div class="menu-btn">
+                <span class="menu-btn_burger" id="open-nav" {{action 'navi_menu'}}>></span>
+            </div>
+            <h1 class="logo"><a href="homepage">Dash Board</a></h1>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="section-split">
+
+            <div class="content-area">
+                <div class="task-area">
+                    <h1>DEPARTMENT</h1>
+                    <ul>
+                        {{#each department_man as |dept index|}}
+                        <li id={{index}} {{action 'dept_selected' index}}>
+                            <a>{{dept.dept_name}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="task-area">
+                    <h1>EMPLOYEE</h1>
+                    <ul>
+                        {{#each employee_list as |emp index|}}
+                        <li id={{index}}>
+                            <a>{{emp.first_name}} {{emp.last_name}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="task-area">
+                    <h1>PROJECTS</h1>
+                    <ul>
+                        {{#each projects_list as |proj index|}}
+                        <li id={{index}} {{action 'dept_proj_task_det' index}}>
+                            <a>{{proj.project_name}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="task-area">
+                    <h1>TASKS</h1>
+                    <ul>
+                        {{#each task_list as |task index|}}
+                        <li id={{index}}>
+                            <a>{{task}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{else if logincheck}}
+
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="/">ABC</a></h1>
+        </div>
+    </nav>
+</header>
+
+<section class="workspace">
+    <div class="container">
+        <h1>LOGIN REQUIRED</h1>
+        <button {{action 'toLogin' }}>Login</button>
+    </div>
+</section>
+
+
+{{/if}}
+
+
+<div class="modal-container" id='modal_container'>
+    <div class="modal">
+        <div class="modal_heading">
+            <h1>Employee Details</h1>
+        </div>
+        <div class="modal_body">
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Name</h4>
+                </span>
+                <div class="content">
+                    <h4>{{empname}}</h4>
+                </div>
+
+            </div>
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Email</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.email}}</h4>
+                </div>
+
+            </div>
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Gender</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.gender}}</h4>
+                </div>
+
+            </div>
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Address</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.address}}</h4>
+                </div>
+
+            </div>
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Date of Birth</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.dob}}</h4>
+                </div>
+
+            </div>
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Joined Date</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.doj}}</h4>
+                </div>
+
+            </div>
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Employee Designation</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.emp_designation}}</h4>
+                </div>
+
+            </div>
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Department</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.dept_name}}</h4>
+                </div>
+
+            </div>
+            {{#if emp}}
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Manager</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.manager_name}}</h4>
+                </div>
+
+            </div>
+            <div class="modal_content">
+                <span class="details">
+                    <h4>Manager Mail ID</h4>
+                </span>
+                <div class="content">
+                    <h4>{{parse_model.manager_email}}</h4>
+                </div>
+
+            </div>
+            {{/if}}
+        </div>
+
+        <button id="close">
+            Close
+        </button>
+    </div>
+</div>
+
+<div class="modal-container-nav " id='modal_container-nav'>
+    <div class="modal show1" id="modal-nav">
+        <div class="links">
+            <a href="homepage" class="active-link">Dash Board</a>
+            <a onclick={{action 'deptemplist' }}>Employees</a>
+            <a href="homepage/departments">Department</a>
+            <a href="homepage/projects">Projects</a>
+        </div>
+
+    </div>
+</div>
+
+
+{{outlet}}
+

@@ -1,0 +1,383 @@
+.emplist_container {
+
+    margin: calc(4% /2) auto;
+    max-width: 1200px;
+    min-width: 600px;
+    width: 200%;
+    background-color: #fff;
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+   
+    
+    .heading {
+
+        font-size: 18px;
+        padding-left: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(to left, #40DFEF, #B9F8D3);
+
+        h2 {
+            padding: 0;
+            font-weight: 800;
+        }
+    }
+
+    .emplist_head {
+
+        justify-content: space-between;
+        display: flex;
+        padding: 10px 20px;
+
+        .reports_head {
+
+            text-align: center;
+            
+
+            h3 {
+
+                color: black;
+                padding: 10px;
+
+                small {
+
+                    color: blue;
+                    font-size: 18px;
+                }
+            }
+        }
+
+
+        select {
+
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 16px;
+            border-bottom-width: 3px;
+            transition: all 0.3s ease;
+            background-color: #fff;
+  
+        }
+
+        select:hover {
+
+            border-color: #FF0075;
+        }
+
+        .action_button {
+
+            button {
+
+                height: 45px;
+                width: 100px;
+                outline: none;
+                border-radius: 5px;
+                // border: 0.4px solid black;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-size: 16px;
+                border-bottom-width: 3px;
+                transition: all 0.3s ease;
+                background-color: #fff;
+                color: black;
+            }
+
+            button:hover {
+
+                border-color: #FF0075;
+                
+            }
+
+        }
+
+        .btn_add {
+            
+
+            button {
+
+                background-color: #2ecc71;
+                color: #fff;
+                font-weight: 800;
+                font-size: 17px;
+            }
+        }
+
+        .btn_remove {
+
+            button {
+
+                background-color: #e74c3c;
+                color: #fff;
+                font-weight: 800;
+                font-size: 17px;
+            }
+
+        }
+
+    }
+
+    .emplist_body {
+
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: space-between;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        max-height: 60vh;
+
+        section {
+
+            width: 100%;
+            display: inline-block;
+
+            .section1 {
+
+                // display: inline-block;
+                width: 50%;
+    
+            }
+    
+            .section2 {
+    
+                width: 50%;
+            }
+
+        }
+        
+
+        table {
+
+            background-color: white;
+            width: 100%;
+            text-align: left;
+            padding: 0 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            border: 0;
+            border-radius: 7px;
+            // display: table;
+            
+
+            th {
+                padding-top: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid lightgrey;
+                text-align: center;
+                border: 0;
+                
+            }
+
+            td {
+
+                text-align: center;
+                padding: 10px 0 ;
+                
+                
+            }
+
+            tr {
+
+                border: 0;
+            }
+
+            tr:hover {
+
+                background-color: #FF007516;
+                
+            }
+
+            .tr_coloralt {
+
+                background-color: rgba(204, 204, 204, 0.2);
+            }
+
+
+            
+        }
+
+    }
+
+    .empty_forspace {
+
+        padding: 8px;
+    }
+}
+
+
+
+
+
+//////  projects
+
+
+.emplist_container-projects {
+
+    margin: calc(4% /2) auto;
+    max-width: 1600px;
+    min-width: 600px;
+    width: 200%;
+    background-color: #fff;
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    // display: flex;
+
+    .heading {
+
+        font-size: 18px;
+        padding-left: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(to left, #40DFEF, #B9F8D3);
+
+        h2 {
+            padding: 0;
+            font-weight: 800;
+        }
+    }
+
+    .emplist_head {
+
+        justify-content: space-between;
+        display: flex;
+        padding: 10px 20px;
+
+        .reports_head {
+
+            text-align: center;
+            
+
+            h3 {
+
+                color: black;
+                padding: 10px;
+
+                small {
+
+                    color: blue;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    select {
+
+        height: 45px;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 16px;
+        border-bottom-width: 3px;
+        transition: all 0.3s ease;
+        background-color: #fff;
+
+    }
+
+    select:hover {
+
+        border-color: #FF0075;
+    }
+
+    .emplist_body {
+
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: space-between;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        max-height: 60vh;
+        display: flex;
+
+
+            .section1 {
+
+                // display: inline-block;
+                width: 50%;
+                margin: 10px;
+                text-align: center;
+    
+            }
+    
+            .section2 {
+    
+                width: 50%;
+                text-align: center;
+                margin: 10px;
+            }
+
+        
+        
+
+        table {
+
+            background-color: white;
+            width: 100%;
+            text-align: left;
+            padding: 0 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            border: 0;
+            border-radius: 7px;
+            // display: table;
+            
+
+            th {
+                padding-top: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid lightgrey;
+                text-align: center;
+                border: 0;
+                
+            }
+
+            td {
+
+                text-align: center;
+                padding: 10px 0 ;
+                
+                
+            }
+
+            tr {
+
+                border: 0;
+            }
+
+            tr:hover {
+
+                background-color: #FF007516;
+                
+            }
+
+            .tr_coloralt {
+
+                background-color: rgba(204, 204, 204, 0.2);
+            }
+
+
+            
+        }
+
+    }
+
+    .empty_forspace {
+
+        padding: 8px;
+    }
+}

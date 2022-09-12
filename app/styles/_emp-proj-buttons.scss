@@ -1,0 +1,30 @@
+.btn-common {
+
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    height: 34px;
+    width: auto;
+    font-family: sans-serif;
+    border: 1px solid black;
+
+}
+
+.checked-in {
+
+   
+    background-color: green;
+}
+
+.checked-out {
+
+    background-color:  tomato;
+}
+
+.grey-out {
+
+    background-color: gray;
+    
+}

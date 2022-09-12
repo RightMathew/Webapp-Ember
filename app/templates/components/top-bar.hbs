@@ -1,0 +1,23 @@
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="/ABC/">ABC</a></h1>
+            {{#if employeePage}}
+            <ul>
+                <li><a href=""><span class="material-symbols-outlined">person_filled</span></a></li>
+                <li><a {{action 'Logout'}}>Logout</a></li>
+                {{!-- <li><button {{action 'Logout'}}>Login</button></li> --}}
+            </ul>
+            {{else if managerpage}}
+                <ul>
+                    <li><a {{action 'generateReport'}}>Reports</a></li>
+                    <li><a href=""><span class="material-symbols-outlined">person_filled</span></a></li>
+                    <li><a {{action 'Logout'}}>Logout</a></li>
+                {{!-- <li><button {{action 'Logout'}}>Login</button></li> --}}
+            </ul>
+            {{/if}}
+        </div>
+    </nav>
+</header>
+
+{{yield}}

@@ -1,0 +1,7 @@
+{{#each projectarr as |project index|}}
+    <li>
+        <a>{{project.project_name}}</a>
+        <span></span>
+        <button class="btn-common checked-in" id={{concat "projbtn" index}} type="button" onclick={{action 'timer' (concat "projbtn" index) index project.project_id}}>Check - In</button>
+    </li>
+{{/each}}
